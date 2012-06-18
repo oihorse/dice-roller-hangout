@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Module>
+
+<!-- /*
+* Copyright (c) 2012 Christian Gohlinghorst 
+* contact: oihorse@gmail.com
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see http://www.gnu.org/licenses/.
+*/-->
+
+	<ModulePrefs title="Dice Roller">
+		<Require feature="rpc"/>
+		<Require feature="views"/>
+	</ModulePrefs>
+
+	<Content type="html">
+	<![CDATA[
+		<!DOCTYPE html>
+		<script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.1"></script>
+		<script src="http://www.horsegoeswest.com/apps/diceroller/javascript/diceRoller.js"></script>
+		<script language="javascript">
+				function toggleDiv(divid)
+				{
+					if(document.getElementById(divid).style.display == 'none')
+					{
+						document.getElementById(divid).style.display = 'block';
+						document.getElementById("hide").innerHTML = "Hide History";
+					}
+					else
+					{
+						document.getElementById(divid).style.display = 'none';
+						document.getElementById("hide").innerHTML = "Show History";
+					}
+				}
+				
+				function diceClicked(value, label)
+				{
+					clearDice();
+					for (var i=0; i < document.Dice.dice.length; i++)
+					{
+						if (document.Dice.dice[i].value == value)
+						{
+						document.Dice.dice[i].checked = true;
+						//alert(document.Dice.dice[i].value);
+						document.getElementById("image_" + label).src = "http://www.horsegoeswest.com/apps/diceroller/images/" + label + "selected.png";
+						}
+				   }
+				}
+				
+				function clearDice()
+				{
+					document.Dice.image_d2.src = "http://www.horsegoeswest.com/apps/diceroller/images/d2.png";
+					document.Dice.image_d3.src = "http://www.horsegoeswest.com/apps/diceroller/images/d3.png";
+					document.Dice.image_d4.src = "http://www.horsegoeswest.com/apps/diceroller/images/d4.png";
+					document.Dice.image_d6.src = "http://www.horsegoeswest.com/apps/diceroller/images/d6.png";
+					document.Dice.image_d8.src = "http://www.horsegoeswest.com/apps/diceroller/images/d8.png";
+					document.Dice.image_d10.src = "http://www.horsegoeswest.com/apps/diceroller/images/d10.png";
+					document.Dice.image_d12.src = "http://www.horsegoeswest.com/apps/diceroller/images/d12.png";
+					document.Dice.image_d20.src = "http://www.horsegoeswest.com/apps/diceroller/images/d20.png";
+					document.Dice.image_d100.src = "http://www.horsegoeswest.com/apps/diceroller/images/d100.png";
+					
+					
+				}
+				
+				
+		</script>
+		
+		<div id="outerContainer" style="float:left;">
+			<div id="mainbox" style="border-style:groove; border-color:black; padding:10px; 
+			-moz-border-radius: 15px; border-radius:15px; width:750; float:left;" >
+			  
+				<p style="text-align:center;"><img src="http://www.horsegoeswest.com/apps/diceroller/images/dicerollerlogo.png" 
+				alt="Dice Roller Logo"></p>
+				<h3>v0.12</h3>
+
+				<form name="Dice">
+					<span style="display:none"><input type="radio" id="d2" name="dice" value="2" /> d2 <br /></span>
+					<img id="image_d2" src="http://www.horsegoeswest.com/apps/diceroller/images/d2.png"
+					onclick="diceClicked('2', 'd2')" style="cursor:pointer;">
+					<span style="display:none"><input type="radio" id="d3" name="dice" value="3" /> d3 <br /></span>
+					<img id="image_d3" src="http://www.horsegoeswest.com/apps/diceroller/images/d3.png"
+					onclick="diceClicked('3', 'd3')" style="cursor:pointer;">
+					<span style="display:none"><input type="radio" id="d4" name="dice" value="4" /> d4 <br /></span>
+					<img id="image_d4" src="http://www.horsegoeswest.com/apps/diceroller/images/d4.png"
+					onclick="diceClicked('4', 'd4')" style="cursor:pointer;">
+					<span style="display:none"><input type="radio" id="d6" name="dice" value="6" checked="checked" /> d6 <br /></span>
+					<img id="image_d6" src="http://www.horsegoeswest.com/apps/diceroller/images/d6selected.png"
+					onclick="diceClicked('6', 'd6')" style="cursor:pointer;">
+					<span style="display:none"><input type="radio" id="d8" name="dice" value="8" /> d8 <br /></span>
+					<img id="image_d8" src="http://www.horsegoeswest.com/apps/diceroller/images/d8.png"
+					onclick="diceClicked('8', 'd8')" style="cursor:pointer;">
+					<br />
+					<span style="display:none"><input type="radio" id="d10" name="dice" value="10" /> d10 <br /></span>
+					<img id="image_d10" src="http://www.horsegoeswest.com/apps/diceroller/images/d10.png"
+					onclick="diceClicked('10', 'd10')" style="cursor:pointer;">
+					<span style="display:none"><input type="radio" id="d12" name="dice" value="12" /> d12 <br /></span>
+					<img id="image_d12" src="http://www.horsegoeswest.com/apps/diceroller/images/d12.png"
+					onclick="diceClicked('12', 'd12')" style="cursor:pointer;">
+					<span style="display:none"><input type="radio" id="d20" name="dice" value="20" /> d20 <br /></span>
+					<img id="image_d20" src="http://www.horsegoeswest.com/apps/diceroller/images/d20.png"
+					onclick="diceClicked('20', 'd20')" style="cursor:pointer;">
+					<span style="display:none"><input type="radio" id="d100" name="dice" value="100" /> d100 <br /></span>
+					<img id="image_d100" src="http://www.horsegoeswest.com/apps/diceroller/images/d100.png"
+					onclick="diceClicked('100', 'd100')" style="cursor:pointer;">
+				</form>
+			
+				<label>Number of Dice to be rolled:</>
+				<select id="NumberOfDice">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+				
+				<br />
+				<input type=button value="Roll the bones!" id="diceButton" onClick="diceButtonClick()"/>
+			  
+				<dl>
+					<dt id="theDiceRoller"></dt>
+					<dd id="diceValueRolled"></dd>
+				</dl>
+			   
+			 </div>
+			
+			 <div id="historyBox" style="float:left; border-style:groove; border-color:black; padding:10px; display:none;">
+				 <textarea id="history" rows="10" col="70" readonly="readonly" >					Initialized
+				 </textarea>
+			 </div>
+			 
+			 <div id="natural20" style="float:left; padding:20px; display:none;">
+			 	<p style="text-align:center;"><img src="http://www.horsegoeswest.com/apps/diceroller/images/natural20.gif" 
+				alt="You rolled a natural 20!"></p>
+				<h2> Natural 20!!!!!</h2>
+			 </div>
+			 
+			 <div id="natural1" style="float:left; padding:20px; display:none;">
+			 	<p style="text-align:center;"><img src="http://www.horsegoeswest.com/apps/diceroller/images/natural1.gif" 
+				alt="You rolled a natural 1."></p>
+				<h2> Natural 1, you so fail!!!</h2>
+			 </div>
+			 
+			 <a id="hide" href="javascript:;" onmousedown="toggleDiv('historyBox');">Show History</a>
+			
+		</div>
+		]]>
+	</Content>
+</Module>
