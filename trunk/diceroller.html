@@ -1,0 +1,74 @@
+<!DOCTYPE html>  
+<html lang="en">  
+  <head>  
+    <meta charset="utf-8">  
+    <title>Dice Roller v0.12 - a dice rolling app for Google+ Hangout</title>  
+    <meta name="description" content="Dice Roller is a dice rolling app for Google+ Hangout. Suitable for playing RPGs over the web, it allows players to roll a number of dice and all the participants see the roll."
+    <link rel="stylesheet" href="style.css">  
+    <script src="script.js"></script>  
+  </head>  
+  <body>  
+    <p style="text-align:center;">
+		<img src="http://www.horsegoeswest.com/apps/diceroller/images/dicerollerlogo.png" 
+				alt="Dice Roller Logo">
+	</p>
+	
+	<h3>v0.12</h3>
+	
+	<p>Dice Roller is a simple dice rolling app for use in role-playing games over Google+ Hangout! It includes 
+	a history function that timestamps all dice rolls with the user that rolled and the results.</p>
+	
+	<p>Dice Roller, does what it says on the tin! Click the Hangouts button below to start a new Hangout session
+	 and launch the app.</p>
+	 
+	 <h3>May 23, 2012 Update</h3>
+	 <p>After extensive use and testing, Firefox seems to work best with this app and Google+ Hangout. This seems to stem
+	 from the issue that Firefox does not care that the HTTPS session is pulling data from a HTTP source. Therefore, it doesn't force a log out and
+	 log back in (which seems to then freeze other users in the session and eventually kicks them out).</p>
+	 
+	 <p>I've got a query into Google as to why this behavior is happening</p>
+	 
+	 <hr />
+	 
+	 <p>Note: If you are using the Chrome browser, you will receive an <i>insecure content</i> pop-up warning, which usually manifests itself by 
+	 the browser address bar depending on which browser you are using. The app will not load unless you give it permission.</p>
+	 
+	 <p>This warning appears becuase you are connected via https to Google while it is trying to access the 
+	 app's resources on my host, which is only making a http connection. Unfortunately this will not be resolved
+	 until I get an ssl cert for my site (too expensive) or I transfer the whole app to the Google App Engine (on the checklist to do in the future)</p>
+	
+	<a href="https://plus.google.com/hangouts/_?gid=761697096920" style="text-decoration:none;">
+  <img src="https://ssl.gstatic.com/s2/oz/images/stars/hangout/1/gplus-hangout-24x100-normal.png"
+    alt="Start a Hangout"
+    style="border:0;width:100px;height:24px;"/>
+</a>
+	
+	
+	<h4>Terms of Service</h4>
+	<p>Copyright (c) 2012 Christian Gohlinghorst</p> 
+	
+	<p>This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.</p>
+	
+	<p>This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	<a href="http://www.gnu.org/licenses/">GNU General Public License</a> for more details.</p>
+	
+	<h3>Privacy Policy</h3>
+	<p>No data is recorded other than the rolling history which only persists during the Google+ Hangout session.</p>
+	<p>There are no cookies, no data is sent back to any servers, or otherwise stored anywhere I'm aware of.</p>
+	
+	<h3>Support</h3>
+	<p>This is a work in progress. I would like to continue to tweak the UI, adding better sounds and maybe one day
+	some actual dice rolling animations.</p>
+	
+	<p>If you have suggestions or find some bugs contact me at <a href="mailto:oihorse@gmail.com?subject=Dice Roller Feedback">oihorse@gmail.com</a></p>
+	
+	<hr />
+	
+	<p>Last update: May 23, 2012</p>
+  </body>  
+</html>  
