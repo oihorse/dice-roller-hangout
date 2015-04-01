@@ -1,0 +1,1 @@
+Dice Roller is a simple dice rolling app for use in role-playing games over Google+ Hangout! It includes a history function that timestamps all dice rolls with the user that rolled and the results.
